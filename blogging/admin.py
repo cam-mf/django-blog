@@ -1,6 +1,7 @@
 from django.contrib import admin
 from blogging.models import Post, Category
 
+
 # and a new admin registration
 class CategoryInline(admin.TabularInline):
     model = Category.posts.through
@@ -13,7 +14,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
 
 
 admin.site.register(Post, PostAdmin)
